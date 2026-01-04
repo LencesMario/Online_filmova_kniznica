@@ -1,23 +1,20 @@
 <template>
   <div>
     <h2>Všetky filmy</h2>
-    <ul>
-      <li v-for="movie in movies" :key="movie.id">
-        {{ movie.title }} ({{ movie.year }})
-      </li>
-    </ul>
+    <MovieList :movies="movies" />
   </div>
 </template>
 
 <script>
 import { useMoviesStore } from '../store/moviesStore'
+import MovieList from '../components/MovieList.vue'
 
 export default {
   name: 'HomePage',
+  components: { MovieList },
   computed: {
     movies() {
-      const store = useMoviesStore()
-      return store.movies
+      return useMoviesStore().movies
     }
   }
 }

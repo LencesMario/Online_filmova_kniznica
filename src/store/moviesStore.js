@@ -11,7 +11,7 @@ export const useMoviesStore = defineStore('movies', {
         length: 148,
         actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'],
         description: 'Film o snoch a realite.',
-        image: 'https://via.placeholder.com/200x300',
+        image: '/images/inception.jpg',
         top: true,
         favorite: false
       },
@@ -23,7 +23,7 @@ export const useMoviesStore = defineStore('movies', {
         length: 169,
         actors: ['Matthew McConaughey', 'Anne Hathaway'],
         description: 'Cesta vesmírom za záchranou ľudstva.',
-        image: 'https://via.placeholder.com/200x300',
+        image: '/images/interstellar.jpg',
         top: true,
         favorite: false
       }

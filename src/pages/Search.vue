@@ -32,11 +32,12 @@ export default {
   name: 'SearchPage',
   components: { MovieList },
   data() {
+    const store = useMoviesStore()
     return {
-      title: '',
-      genre: '',
-      year: '',
-      actor: ''
+      title: store.searchFilters?.title || '',
+      genre: store.searchFilters?.genre || '',
+      year: store.searchFilters?.year || '',
+      actor: store.searchFilters?.actor || ''
     }
   },
   computed: {
@@ -45,27 +46,33 @@ export default {
     },
     filteredMovies() {
       return this.store.movies.filter(movie => {
+        const movieGenres = movie.genre.split(',').map(g => g.trim())
         return (
           (!this.title || movie.title.toLowerCase().includes(this.title.toLowerCase())) &&
-          (!this.genre || movie.genre === this.genre) &&
+          (!this.genre || movieGenres.includes(this.genre)) &&
           (!this.year || movie.year === this.year) &&
           (!this.actor || movie.actors.some(a => a.toLowerCase().includes(this.actor.toLowerCase())))
         )
       })
     },
     genres() {
-      // vyber všetky unikátne žánre zo store
-      const allGenres = this.store.movies.map(m => m.genre)
+      const allGenres = this.store.movies.flatMap(m => m.genre.split(',').map(g => g.trim()))
       return [...new Set(allGenres)]
     },
     years() {
-      // vyber všetky unikátne roky zo store a zorad vzostupne
       const allYears = this.store.movies.map(m => m.year)
       return [...new Set(allYears)].sort((a, b) => a - b)
     }
+  },
+  watch: {
+    title(val) { this.store.setSearchFilters({ title: val }) },
+    genre(val) { this.store.setSearchFilters({ genre: val }) },
+    year(val) { this.store.setSearchFilters({ year: val }) },
+    actor(val) { this.store.setSearchFilters({ actor: val }) }
   }
 }
 </script>
+
 
 <style>
 .filters {

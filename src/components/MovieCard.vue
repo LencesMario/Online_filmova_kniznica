@@ -1,12 +1,14 @@
 <template>
   <div class="card" @click="$router.push(`/movie/${movie.id}`)">
     <img :src="movie.image" alt="movie poster" />
-    <h3>{{ movie.title }}</h3>
-    <p>{{ movie.year }}</p>
-    <p>⭐ {{ movie.rating }}/10</p>
-    <button @click.stop="toggleToWatch">
-      {{ movie.toWatch ? '➖ Odobrať z môjho zoznamu' : '➕ Pridať do môjho zoznamu' }}
-    </button>
+    <h3 class="title">{{ movie.title }}</h3>
+    <div class="card-bottom">
+      <p>{{ movie.year }}</p>
+      <p>⭐ {{ movie.rating }}/10</p>
+      <button @click.stop="toggleToWatch">
+        {{ movie.toWatch ? '➖ Odobrať z môjho zoznamu' : '➕ Pridať do môjho zoznamu' }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -29,21 +31,36 @@ export default {
 
 <style>
 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* roztiahne sa na výšku gridu */
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px;
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center; /* všetko vycentruje horizontálne */
 }
 
 .card img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 5px;
+  display: block;
+}
+
+.card .title {
+  margin: 10px 0 0 0; /* hneď pod obrazkom */
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto; /* presunie obsah ku spodku */
+  gap: 5px; /* rovnomerné medzery medzi rok, rating a button */
 }
 
 .card button {
-  margin-top: 5px;
   padding: 5px 10px;
   cursor: pointer;
 }

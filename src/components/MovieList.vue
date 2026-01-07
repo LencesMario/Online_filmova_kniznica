@@ -22,9 +22,10 @@ export default {
 
 <style>
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* flexibilné stĺpce */
   gap: 20px;
   margin-top: 20px;
+  align-items: stretch; /* všetky karty v riadku rovnakej výšky */
 }
 </style>

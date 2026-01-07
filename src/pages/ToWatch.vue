@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2>Moje obľúbené filmy</h2>
-    <MovieList :movies="favorites" />
+    <h2>Filmy na pozretie</h2>
+    <MovieList :movies="toWatchMovies" />
   </div>
 </template>
 
@@ -10,11 +10,11 @@ import { useMoviesStore } from '../store/moviesStore'
 import MovieList from '../components/MovieList.vue'
 
 export default {
-  name: 'FavoritesPage',
+  name: 'ToWatchPage',
   components: { MovieList },
   computed: {
-    favorites() {
-      return useMoviesStore().favoriteMovies
+    toWatchMovies() {
+      return useMoviesStore().toWatchMovies
     }
   }
 }

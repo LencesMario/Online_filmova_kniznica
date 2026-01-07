@@ -1,3 +1,6 @@
+import inceptionImg from '../assets/inception.jpg'
+import interstellarImg from '../assets/interstellar.jpg'
+
 import { defineStore } from 'pinia'
 
 export const useMoviesStore = defineStore('movies', {
@@ -11,9 +14,9 @@ export const useMoviesStore = defineStore('movies', {
         length: 148,
         actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'],
         description: 'Film o snoch a realite.',
-        image: '/images/inception.jpg',
-        top: true,
-        favorite: false
+        image: inceptionImg,
+        rating: 9,         
+        toWatch: false
       },
       {
         id: 2,
@@ -23,19 +26,20 @@ export const useMoviesStore = defineStore('movies', {
         length: 169,
         actors: ['Matthew McConaughey', 'Anne Hathaway'],
         description: 'Cesta vesmírom za záchranou ľudstva.',
-        image: '/images/interstellar.jpg',
-        top: true,
-        favorite: false
+        image: interstellarImg,
+        rating: 8,
+        toWatch: false
       }
     ]
   }),
 
   getters: {
     topMovies(state) {
-      return state.movies.filter(m => m.top)
+      // teraz vyberá filmy s rating >= 8 (môžeš nastaviť podľa potreby)
+      return state.movies.filter(m => m.rating >= 8)
     },
-    favoriteMovies(state) {
-      return state.movies.filter(m => m.favorite)
+    toWatchMovies(state) {
+      return state.movies.filter(m => m.toWatch)
     },
     getMovieById: (state) => {
       return (id) => state.movies.find(m => m.id === Number(id))
@@ -43,9 +47,13 @@ export const useMoviesStore = defineStore('movies', {
   },
 
   actions: {
-    toggleFavorite(id) {
+    toggleToWatch(id) {
       const movie = this.movies.find(m => m.id === id)
-      if (movie) movie.favorite = !movie.favorite
+      if (movie) movie.toWatch = !movie.toWatch
+    },
+    setRating(id, rating) {
+      const movie = this.movies.find(m => m.id === id)
+      if (movie) movie.rating = rating
     }
   }
 })

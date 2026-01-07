@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../pages/Home.vue'
 import TopMovies from '../pages/TopMovies.vue'
-import Favorites from '../pages/Favorites.vue'
+import Favorites from '../pages/ToWatch.vue'
 import Search from '../pages/Search.vue'
 import MovieDetail from '../pages/MovieDetail.vue'
 

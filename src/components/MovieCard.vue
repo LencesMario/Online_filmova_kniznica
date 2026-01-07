@@ -3,8 +3,9 @@
     <img :src="movie.image" alt="movie poster" />
     <h3>{{ movie.title }}</h3>
     <p>{{ movie.year }}</p>
-    <button @click.stop="toggleFavorite">
-      {{ movie.favorite ? '💖' : '🤍' }}
+    <p>⭐ {{ movie.rating }}/10</p> <!-- rating -->
+    <button @click.stop="toggleToWatch">
+      {{ movie.toWatch ? '🎬 Chcem pozrieť' : '➕ Pridať do zoznamu' }}
     </button>
   </div>
 </template>
@@ -18,32 +19,10 @@ export default {
     movie: Object
   },
   methods: {
-    toggleFavorite() {
+    toggleToWatch() {
       const store = useMoviesStore()
-      store.toggleFavorite(this.movie.id)
+      store.toggleToWatch(this.movie.id)
     }
   }
 }
 </script>
-
-<style>
-.card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.card img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.card button {
-  margin-top: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-</style>

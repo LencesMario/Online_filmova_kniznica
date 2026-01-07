@@ -1,6 +1,3 @@
-import inceptionImg from '../assets/inception.jpg'
-import interstellarImg from '../assets/interstellar.jpg'
-
 import { defineStore } from 'pinia'
 
 export const useMoviesStore = defineStore('movies', {
@@ -14,8 +11,8 @@ export const useMoviesStore = defineStore('movies', {
         length: 148,
         actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'],
         description: 'Film o snoch a realite.',
-        image: inceptionImg,
-        rating: 9,         
+        image: '/images/inception.jpg',
+        rating: 9.9,
         toWatch: false
       },
       {
@@ -26,8 +23,8 @@ export const useMoviesStore = defineStore('movies', {
         length: 169,
         actors: ['Matthew McConaughey', 'Anne Hathaway'],
         description: 'Cesta vesmírom za záchranou ľudstva.',
-        image: interstellarImg,
-        rating: 8,
+        image: '/images/interstellar.jpg',
+        rating: 9.8,
         toWatch: false
       }
     ]
@@ -35,8 +32,10 @@ export const useMoviesStore = defineStore('movies', {
 
   getters: {
     topMovies(state) {
-      // teraz vyberá filmy s rating >= 8 (môžeš nastaviť podľa potreby)
-      return state.movies.filter(m => m.rating >= 8)
+      return state.movies
+        .slice() // kópia poľa, aby sa originál nemenil
+        .sort((a, b) => b.rating - a.rating) // zorad od najvyššieho ratingu
+        .slice(0, 1) // vyber top 5 filmov
     },
     toWatchMovies(state) {
       return state.movies.filter(m => m.toWatch)

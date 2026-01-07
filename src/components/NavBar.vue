@@ -2,7 +2,7 @@
   <nav class="navbar">
     <router-link to="/">Home</router-link>
     <router-link to="/top">Top films</router-link>
-    <router-link to="/favorites">Moje obľúbené</router-link>
+    <router-link to="/favorites">Môj zoznam</router-link>
     <router-link to="/search">Vyhľadávanie</router-link>
   </nav>
 </template>

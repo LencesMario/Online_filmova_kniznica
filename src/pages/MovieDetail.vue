@@ -1,15 +1,21 @@
 <template>
-  <div v-if="movie">
+  <div v-if="movie" class="movie-detail">
     <h2>{{ movie.title }} ({{ movie.year }})</h2>
-    <img :src="movie.image" alt="poster" class="poster"/>
+    <img :src="movie.image" alt="poster" class="poster" />
+
     <p><strong>Žáner:</strong> {{ movie.genre }}</p>
     <p><strong>Dĺžka:</strong> {{ movie.length }} minút</p>
     <p><strong>Herci:</strong> {{ movie.actors.join(', ') }}</p>
     <p><strong>Popis:</strong> {{ movie.description }}</p>
-    <button @click="toggleFavorite">
-      {{ movie.favorite ? '💖 Obľúbené' : '🤍 Pridať do obľúbených' }}
+    <p><strong>Jazyk:</strong> {{ movie.language }}</p>
+    <p><strong>Titulky:</strong> {{ movie.subtitles ? 'áno' : 'nie' }}</p>
+    <p><strong>Rating:</strong> ⭐ {{ movie.rating.toFixed(1) }}/10</p>
+
+    <button @click="toggleToWatch" class="to-watch-btn">
+      {{ movie.toWatch ? '➖ Odobrať z môjho zoznamu' : '➕ Pridať do môjho zoznamu' }}
     </button>
   </div>
+
   <div v-else>
     <p>Film nebol nájdený.</p>
   </div>
@@ -26,9 +32,10 @@ export default {
     }
   },
   methods: {
-    toggleFavorite() {
+    toggleToWatch() {
       const store = useMoviesStore()
-      store.toggleFavorite(this.movie.id)
+      store.toggleToWatch(this.movie.id)
+      this.movie.toWatch = !this.movie.toWatch // aby sa zmenilo okamžite v UI
     }
   },
   mounted() {
@@ -44,5 +51,24 @@ export default {
   width: 250px;
   border-radius: 10px;
   margin: 10px 0;
+}
+
+.to-watch-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.to-watch-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.movie-detail {
+  max-width: 600px;
+  margin: 0 auto;
 }
 </style>

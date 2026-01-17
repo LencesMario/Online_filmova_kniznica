@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '../pages/Home.vue'
 import TopMovies from '../pages/TopMovies.vue'
@@ -17,7 +17,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(), // <-- zmena pre GitHub Pages
   routes
 })
 

@@ -4,6 +4,7 @@
     <router-link to="/top">Top films</router-link>
     <router-link to="/favorites">Môj zoznam</router-link>
     <router-link to="/search">Vyhľadávanie</router-link>
+    <router-link to="/about">O nás</router-link>
   </nav>
 </template>
 

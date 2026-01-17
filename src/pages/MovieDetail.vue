@@ -35,7 +35,6 @@ export default {
     toggleToWatch() {
       const store = useMoviesStore()
       store.toggleToWatch(this.movie.id)
-      this.movie.toWatch = !this.movie.toWatch // aby sa zmenilo okamžite v UI
     }
   },
   mounted() {

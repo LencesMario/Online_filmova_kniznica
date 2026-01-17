@@ -1,5 +1,7 @@
 # Online_filmova_kniznica
 
+Pozri stránku: https://lencesmario.github.io/Online_filmova_kniznica
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

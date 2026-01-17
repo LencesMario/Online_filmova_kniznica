@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    this.displayedMovies = this.getRandomMovies(5)
+    this.displayedMovies = this.getRandomMovies(10)
   },
   methods: {
     getRandomMovies(count) {

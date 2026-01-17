@@ -33,7 +33,7 @@ export default {
   },
   mounted() {
     // zobrazíme prvých 5 filmov
-    this.displayedMovies = this.allTopMovies.slice(0, 10)
+    this.displayedMovies = this.allTopMovies.slice(0, 5)
   },
   methods: {
     addMoreMovies() {

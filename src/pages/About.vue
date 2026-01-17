@@ -88,7 +88,7 @@ p {
   border-radius: 8px;
   flex: 1 1 200px;
 }
-.team-member.p{
+.team-member p{
   color: bisque;
 }
 </style>

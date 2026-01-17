@@ -5,7 +5,7 @@
     <MovieList :movies="displayedMovies" />
 
     <div v-if="displayedMovies.length < allTopMovies.length" class="load-more">
-      <button @click="addMoreMovies">Ďalších 5</button>
+      <LoadMoreButton :onClick="addMoreMovies" />
     </div>
   </div>
 </template>
@@ -13,13 +13,14 @@
 <script>
 import { useMoviesStore } from '../store/moviesStore'
 import MovieList from '../components/MovieList.vue'
+import LoadMoreButton from '../components/LoadMoreButton.vue'
 
 export default {
   name: 'TopMoviesPage',
-  components: { MovieList },
+  components: { MovieList, LoadMoreButton },
   data() {
     return {
-      displayedMovies: []
+      displayedMovies: [],
     }
   },
   computed: {

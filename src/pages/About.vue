@@ -31,8 +31,8 @@
     <!-- Kontakt -->
     <section class="section">
       <h2>Kontakt</h2>
-      <p>📧 Email: kontakt@filmapp.sk</p>
-      <p>🌐 Web: www.filmapp.sk</p>
+      <p>📧 Email: info@onlinefilmkniznica.sk</p>
+      <p>🌐 Web: https://lencesmario.github.io/Online_filmova_kniznica/#/</p>
     </section>
 
   </div>

@@ -32,7 +32,10 @@
     <section class="section">
       <h2>Kontakt</h2>
       <p>📧 Email: info@onlinefilmkniznica.sk</p>
-      <p>🌐 Web: https://lencesmario.github.io/Online_filmova_kniznica/#/</p>
+      <p>🌐 Web: <a href="https://lencesmario.github.io/Online_filmova_kniznica/#/" target="_blank">
+      Online filmova kniznica
+      </a>
+      </p>
     </section>
 
   </div>

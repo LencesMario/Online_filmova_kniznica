@@ -409,18 +409,48 @@ export default {
 
 .compact-slider {
   position: relative;
-  height: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.compact-slider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #dee2e6;
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.compact-slider .track-fill {
+  position: absolute;
+  top: 50%;
+  left: var(--min-percent, 0%);
+  right: calc(100% - var(--max-percent, 100%));
+  height: 4px;
+  background: #339af0;
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .compact-slider input[type="range"] {
   position: absolute;
   width: 100%;
-  height: 4px;
+  height: 100%;
   background: transparent;
   -webkit-appearance: none;
   appearance: none; /* Pridaná štandardná vlastnosť */
   pointer-events: none;
   margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .compact-slider input[type="range"]::-webkit-slider-thumb {
@@ -445,6 +475,9 @@ export default {
   cursor: pointer;
   border: 2px solid white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+  position: relative;
+  z-index: 4;
 }
 
 .compact-slider input[type="range"]::-webkit-slider-runnable-track {

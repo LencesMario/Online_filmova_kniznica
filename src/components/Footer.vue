@@ -31,6 +31,18 @@ export default {
 </script>
 
 <style>
+/* menšie obrazovky */
+@media (max-width: 600px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    margin: 10px 0;
+  }
+}
+
 .footer {
   background-color: #222;
   color: white;
@@ -43,11 +55,14 @@ export default {
   justify-content: center;
   gap: 40px;
   margin-bottom: 20px;
+
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .footer-column {
   min-width: 200px;
-  margin: 0 20px;
+  margin: 10 20px;
 }
 
 .footer-column h4 {

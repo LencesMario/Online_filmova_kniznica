@@ -5,7 +5,7 @@
     <section class="section">
       <h2>Naša misia</h2>
       <p>
-        FilmApp je miestom, kde môžete objavovať najlepšie filmy, sledovať top rebríčky a ukladať si svoje obľúbené filmy.
+        Online filmová knižnica je miestom, kde môžete objavovať najlepšie filmy, sledovať top rebríčky a ukladať si svoje obľúbené filmy.
         Naším cieľom je sprístupniť filmy rýchlo a jednoducho a vytvoriť komunitu filmových nadšencov.
       </p>
     </section>
@@ -51,8 +51,6 @@ export default {
 .about-page {
   max-width: 900px;
   margin: 0 auto;
-  
-  color: white;
   font-family: Arial, sans-serif;
 }
 
@@ -60,6 +58,10 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
   color: blueviolet;
+}
+
+h3 {
+  color: white;
 }
 
 .section {

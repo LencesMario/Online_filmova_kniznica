@@ -1,5 +1,8 @@
 <template>
   <nav class="navbar">
+    <router-link to="/">
+      <img src="/Online_filmova_kniznica/images/psi.jpg" alt="Logo" class="logo-img" />
+    </router-link>
     <router-link to="/">Domov</router-link> 
     <router-link to="/top">Top filmy</router-link>
     <router-link to="/favorites">Môj zoznam</router-link>
@@ -15,6 +18,16 @@ export default {
 </script>
 
 <style>
+.logo-img {
+  height: 30px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
 .navbar {
   position: fixed;
   top: 0;

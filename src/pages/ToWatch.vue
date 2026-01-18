@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Filmy na pozretie</h2>
+  <div class="page-container">
+    <h1>Filmy na pozretie</h1>
     <MovieList :movies="toWatchMovies" />
   </div>
 </template>
@@ -19,3 +19,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.page-container {
+  padding: 0 16px;
+}
+
+</style>

@@ -51,7 +51,7 @@ export default {
 .about-page {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  
   color: white;
   font-family: Arial, sans-serif;
 }

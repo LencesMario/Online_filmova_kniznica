@@ -1,6 +1,10 @@
 <template>
   <div v-if="movie" class="movie-detail">
-    <h2>{{ movie.title }} ({{ movie.year }})</h2>
+    <div class="header">
+      <button @click="goBack" class="back-btn">←</button>
+      <h2>{{ movie.title }} ({{ movie.year }})</h2>
+    </div>
+    
     <img :src="movie.image" alt="poster" class="poster" />
 
     <p><strong>Žáner:</strong> {{ movie.genre }}</p>
@@ -35,6 +39,10 @@ export default {
     toggleToWatch() {
       const store = useMoviesStore()
       store.toggleToWatch(this.movie.id)
+    },
+    goBack() {
+      // Vráti sa na predchádzajúcu stránku
+      this.$router.go(-1)
     }
   },
   mounted() {
@@ -46,6 +54,30 @@ export default {
 </script>
 
 <style>
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background-color: #e0e0e0;
+}
+
 .poster {
   width: 250px;
   border-radius: 10px;

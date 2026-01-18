@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Vyhľadávanie filmov</h2>
+  <div class="page-container">
+    <h1>Vyhľadávanie filmov</h1>
 
     <div class="filter-container">
       <!-- Prvý riadok filtrov -->
@@ -524,5 +524,9 @@ h2 {
   .filter-row {
     gap: 16px;
   }
+}
+
+.page-container {
+  padding: 0 16px;
 }
 </style>

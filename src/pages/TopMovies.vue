@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>Top filmy</h2>
+  <div class="page-container">
+    <h1>Top filmy</h1>
 
     <MovieList :movies="displayedMovies" />
 
@@ -46,6 +46,17 @@ export default {
 </script>
 
 <style>
+
+.page-container {
+  padding: 0 16px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
 .load-more {
   text-align: center;
   margin-top: 20px;

@@ -53,6 +53,7 @@ export default {
     0 0 0 1px rgba(76, 175, 80, 0.2); /* tenký zelený okraj */
   border-color: rgba(76, 175, 80, 0.3); /* priesvitná zelená */
   z-index: 10;
+  cursor: pointer;
 }
 
 .card img {

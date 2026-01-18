@@ -23,7 +23,11 @@
       <div class="team">
         <div class="team-member">
           <h3>Mário Lenčéš</h3>
-          <p>Vývojár a zakladateľ</p>
+          <p>Zakladateľ</p>
+        </div>
+        <div class="team-member">
+          <h3>Mário Lenčéš</h3>
+          <p>Vývojár</p>
         </div>
       </div>
     </section>

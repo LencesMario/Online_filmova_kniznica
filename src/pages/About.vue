@@ -27,7 +27,7 @@
         </div>
         <div class="team-member">
           <h3>Mário Lenčéš</h3>
-          <p>Vývojár</p>
+          <p>Vývojár</p> 
         </div>
       </div>
     </section>
